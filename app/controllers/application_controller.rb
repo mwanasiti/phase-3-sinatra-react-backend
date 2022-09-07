@@ -89,7 +89,7 @@ end
   put '/topics/:id' do
     fix = Topic.find(params[:id])
     fix.update(
-      
+      name: params[:name],
     )
     fix.to_json
   end
