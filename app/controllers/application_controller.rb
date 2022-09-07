@@ -107,8 +107,8 @@ end
     deleted.to_json
   end
 
-  delete '/courses/:id' do
-    deleted = Course.find(params[:id])
+  delete '/topics/:id' do
+    deleted = Topic.find(params[:id])
     deleted.destroy
     deleted.to_json
   end
