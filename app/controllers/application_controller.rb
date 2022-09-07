@@ -50,48 +50,46 @@ end
 
   post '/authors' do
     send = Author.create(
-      image_url: params[:image_url]
+      image_url: params[:image_url],
       name: params[:name],
     )
     send.to_json
   end
 
-  post '/courses' do
-    send = Course.create(
+  post '/topics' do
+    send = Topic.create(
       name: params[:name],
-      lecturer_id: params[:lecturer_id],
-      student_id: params[:student_id]
     )
     send.to_json
   end
   
 
   #patch
-  put '/students/:id' do
-    fix = Student.find(params[:id])
-    fix.update(
-      name: params[:name],
-      lecturer_id: params[lecturer_id],
-      course_id: params[course_id]
-    )
-    fix.to_json
-  end
-
-  put '/lecturers/:id' do
-    fix = Lecturer.find(params[:id])
-    fix.update(
-      name: params[:name],
-      course: params[:course]
-    )
-    fix.to_json
-  end
-
   put '/courses/:id' do
     fix = Course.find(params[:id])
     fix.update(
+      image_url: params[:image_url],
       name: params[:name],
-      lecturer_id: params[lecturer_id],
-      student_id: params[student_id],
+      topic_id: params[:topic_id],
+      author_id: params[:author_id],
+      link: params[:link]
+    )
+    fix.to_json
+  end
+
+  put '/authors/:id' do
+    fix = Author.find(params[:id])
+    fix.update(
+      image_url: params[:image_url],
+      name: params[:name],
+    )
+    fix.to_json
+  end
+
+  put '/topics/:id' do
+    fix = Topic.find(params[:id])
+    fix.update(
+      
     )
     fix.to_json
   end
