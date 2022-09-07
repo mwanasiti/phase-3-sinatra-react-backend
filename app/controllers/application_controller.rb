@@ -95,14 +95,14 @@ end
   end
   
   #delete
-  delete '/students/:id' do
-    deleted = Student.find(params[:id])
+  delete '/courses/:id' do
+    deleted = Course.find(params[:id])
     deleted.destroy
     deleted.to_json
   end
 
-  delete '/lecturers/:id' do
-    deleted = Lecturer.find(params[:id])
+  delete '/authors/:id' do
+    deleted = Author.find(params[:id])
     deleted.destroy
     deleted.to_json
   end
