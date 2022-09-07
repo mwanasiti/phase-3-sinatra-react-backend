@@ -64,7 +64,7 @@ end
   end
   
 
-  #patch
+  #put
   put '/courses/:id' do
     fix = Course.find(params[:id])
     fix.update(
