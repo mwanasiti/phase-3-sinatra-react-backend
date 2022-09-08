@@ -9,6 +9,7 @@ class ApplicationController < Sinatra::Base
   get '/courses/:id' do
     course = Course.find(params[:id])
     course.to_json()
+    include: {courses: {only: [:id, :name, :topic_id, :author_id, :image_url]}}
   end
 
   get "/courses" do
