@@ -127,6 +127,12 @@ end
     deleted.destroy
     deleted.to_json
   end
+
+  delete '/feedbacks/:id' do
+    deleted = Feedback.find(params[:id])
+    deleted.destroy
+    deleted.to_json
+  end
 end
 
 
