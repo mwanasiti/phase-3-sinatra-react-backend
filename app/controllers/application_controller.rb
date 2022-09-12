@@ -34,7 +34,13 @@ end
   get '/topics/:id' do
     topic = Topic.find(params[:id])
     topic.to_json
-  end  
+  end 
+
+  get '/feedback' do
+    all_feedback = Feedback.all
+    all_feedback.to_json(only: [:id, :name, :rating, :reason], 
+      include: {course: {only: [:id, :name]}})
+  end
 
   #post
   post '/courses' do
