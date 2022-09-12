@@ -36,7 +36,7 @@ end
     topic.to_json
   end 
 
-  get '/feedback' do
+  get '/feedbacks' do
     all_feedback = Feedback.all
     all_feedback.to_json(only: [:id, :name, :rating, :reason], 
       include: {course: {only: [:id, :name]}})
