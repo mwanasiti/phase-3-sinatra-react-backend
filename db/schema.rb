@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_07_114645) do
+ActiveRecord::Schema.define(version: 2022_09_12_081230) do
 
   create_table "authors", force: :cascade do |t|
     t.string "image_url"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 2022_09_07_114645) do
     t.string "link"
     t.index ["author_id"], name: "index_courses_on_author_id"
     t.index ["topic_id"], name: "index_courses_on_topic_id"
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.string "name"
+    t.string "rating"
+    t.string "reason"
+    t.integer "course_id"
+    t.index ["course_id"], name: "index_feedbacks_on_course_id"
   end
 
   create_table "topics", force: :cascade do |t|

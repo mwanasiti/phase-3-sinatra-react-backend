@@ -22,6 +22,9 @@ Topic.create(name: "Leadership")
 Topic.create(name: "Human Rights")
 Topic.create(name: "Activism")
 
+#ratings
+Feedback.create(name: "Ochola", rating: 3, reason:"feminism sucks", course_id: 5)
+
 
 
 puts "✅ Done seeding!"
