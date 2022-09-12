@@ -71,9 +71,9 @@ end
   
   post '/feedbacks' do
     send = Feedback.create(
-      name: params[:name]
-      rating: params[:rating]
-      reason: params[:reason]
+      name: params[:name],
+      rating: params[:rating],
+      reason: params[:reason],
       course_id: params[:course_id]
     )
     send.to_json
