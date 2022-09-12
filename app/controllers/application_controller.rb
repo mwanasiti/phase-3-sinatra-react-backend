@@ -38,7 +38,7 @@ end
 
   get '/feedbacks' do
     all_feedback = Feedback.all
-    all_feedback.to_json(only: [:id, :name, :rating, :reason], 
+    all_feedback.to_json(only: [:id, :name, :rating, :reason, :course_id], 
       include: {course: {only: [:id, :name]}})
   end
 
