@@ -13,7 +13,8 @@ class ApplicationController < Sinatra::Base
 
   get "/courses" do
       courses = Course.all   
-      courses.to_json
+      courses.to_json(only: [:id, :image_url, :name, :author_id, :topic_id, :link], 
+        include: {author: {only: [:id, :name]}, topic: {only: [:id, :name]}})
   end
 
   get "/authors" do
